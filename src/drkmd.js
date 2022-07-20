@@ -15,6 +15,8 @@ export default class Darkmode {
 			attach: false,
 			buttonLight: '#fff',
 			buttonDark: '#000',
+			teal1: '#5F939A',
+			teal2: '#D8AC9C',
 			events: true,
 			cookie: false,
 			localStorage: true,
@@ -27,9 +29,20 @@ export default class Darkmode {
 		options = Object.assign({}, defaultOptions, options)
 
 		// Initialize values
+		this.state = 'light'
 		this.options = options
-		this.dark = false
-
+		//this.dark = false
+		//Sets the theme to a given value, takes in new theme as a string
+		//for c and takes in the current value of state for s
+		//!!!State represents the current theme that it is on!!!
+		function setTheme(c, s){
+			newTheme = ['theme-', c].join('')
+			prevTheme = ['theme-', s].join('')
+			document.documentElement.setAttribute('data-theme', c)
+			document.body.classList.add(newTheme)
+			document.body.classList.remove(prevTheme)
+			state = c
+		}
 		// Listen for prefers-color-scheme change
 		if (options.autoMatchOsTheme) {
 			window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => e.matches && this._handlePreferedThemeChangeEvent())
