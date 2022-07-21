@@ -15,8 +15,6 @@ export default class Darkmode {
 			attach: false,
 			buttonLight: '#fff',
 			buttonDark: '#000',
-			teal1: '#5F939A',
-			teal2: '#D8AC9C',
 			events: true,
 			cookie: false,
 			localStorage: true,
@@ -34,7 +32,7 @@ export default class Darkmode {
 		//this.dark = false
 		//Sets the theme to a given value, takes in new theme as a string for c
 		//!!!State represents the current theme that it is on!!!
-		function setTheme(c){
+		Darkmode.setTheme(c);{
 			newTheme = ['theme-', c].join('')
 			prevTheme = ['theme-', state].join('')
 			document.documentElement.setAttribute('data-theme', c)
