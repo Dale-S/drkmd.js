@@ -32,12 +32,11 @@ export default class Darkmode {
 		this.state = 'light'
 		this.options = options
 		//this.dark = false
-		//Sets the theme to a given value, takes in new theme as a string
-		//for c and takes in the current value of state for s
+		//Sets the theme to a given value, takes in new theme as a string for c
 		//!!!State represents the current theme that it is on!!!
-		function setTheme(c, s){
+		function setTheme(c){
 			newTheme = ['theme-', c].join('')
-			prevTheme = ['theme-', s].join('')
+			prevTheme = ['theme-', state].join('')
 			document.documentElement.setAttribute('data-theme', c)
 			document.body.classList.add(newTheme)
 			document.body.classList.remove(prevTheme)
