@@ -30,16 +30,7 @@ export default class Darkmode {
 		this.state = 'light'
 		this.options = options
 		//this.dark = false
-		//Sets the theme to a given value, takes in new theme as a string for c
-		//!!!State represents the current theme that it is on!!!
-		Darkmode.setTheme(c);{
-			newTheme = ['theme-', c].join('')
-			prevTheme = ['theme-', state].join('')
-			document.documentElement.setAttribute('data-theme', c)
-			document.body.classList.add(newTheme)
-			document.body.classList.remove(prevTheme)
-			state = c
-		}
+		
 		// Listen for prefers-color-scheme change
 		if (options.autoMatchOsTheme) {
 			window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => e.matches && this._handlePreferedThemeChangeEvent())
@@ -68,7 +59,16 @@ export default class Darkmode {
 		// Change the theme to dark if true or light if false
 		this._changeThemeToDark(changeToDark)
 	}
-
+	//Sets the theme to a given value, takes in new theme as a string for c
+	//!!!State represents the current theme that it is on!!!
+	setTheme(c){
+		newTheme = ['theme-', c].join('')
+		prevTheme = ['theme-', state].join('')
+		document.documentElement.setAttribute('data-theme', c)
+		document.body.classList.add(newTheme)
+		document.body.classList.remove(prevTheme)
+		state = c
+	}
 	/**
 	 * Attach the theme toggle to the page
 	 */
