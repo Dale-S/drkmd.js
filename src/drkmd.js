@@ -115,7 +115,7 @@ export default class Darkmode {
 		div.setAttribute('role', 'checkbox')
 
 		div.appendChild(span)
-
+		
 		div.addEventListener('click', () => {
 			this.toggle()
 		})
@@ -137,7 +137,6 @@ export default class Darkmode {
 		this._setStorageValue(false)
 		this.dark = false
 	}
-
 	/**
 	 * Change the theme to dark
 	 */
