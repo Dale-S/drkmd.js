@@ -29,7 +29,7 @@ export default class Darkmode {
 		// Initialize values
 		this.state = 'light'
 		this.options = options
-		//this.dark = false
+		this.dark = false
 		
 		// Listen for prefers-color-scheme change
 		if (options.autoMatchOsTheme) {
